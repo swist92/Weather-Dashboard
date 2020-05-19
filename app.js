@@ -1,3 +1,5 @@
+moment().format("dddd, MMMM Do YYYY, h:mm A");
+
 const apiKey = "412552e87ada8cac1f10cba0d02c9993";
 const cityName = document.getElementById("input").value;
 console.log(city);
