@@ -1,0 +1,22 @@
+.jumbotron {
+    background-image: url(https://scx1.b-cdn.net/csz/news/800/2018/1-whytheweathe.jpg);
+    background-attachment: fixed;
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 10px;
+    padding-top: 10;
+    margin-bottom: 0px;
+}
+
+.body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-image: url(https://cdn.hswstatic.com/gif/why-is-sky-blue-1.jpg);
+    background-attachment: fixed;
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
