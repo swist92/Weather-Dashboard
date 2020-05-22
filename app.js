@@ -8,6 +8,15 @@ $("#button").on("click", function() {
   getInput(cityName);
 });
 
+let citylist = localStorage.getItem("cities");
+console.log(citylist);
+if (citylist) {
+  citylist = JSON.parse(citylist)
+  
+} else {
+  citylist = []
+}
+
 function getInput(cityName) {
   const apiCurrent =
     `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`;
@@ -44,11 +53,11 @@ function getInput(cityName) {
       //uviButton.textContent = UVI;
 
       if (responseUVIndex.value > 0 && responseUVIndex.value <= 4) {
-        $(".uvIndex").attr("class", "bg-success pl-3 rounded");
+        $(".uvIndex").attr("class", "uvIndex bg-success pl-3 rounded");
       } else if (responseUVIndex.value > 4 && responseUVIndex.value <= 8) {
-        $(".uvIndex").attr("class", "bg-warning pl-3 rounded");
+        $(".uvIndex").attr("class", "uvIndex bg-warning pl-3 rounded");
       } else if (responseUVIndex.value > 8) {
-        $(".uvIndex").attr("class", "bg-danger pl-3 rounded");
+        $(".uvIndex").attr("class", "uvIndex bg-danger pl-3 rounded");
       }
 
     });
@@ -104,20 +113,20 @@ function getInput(cityName) {
 
   // local storage goes here
 
-  // $(".weatherDashboard").show();
+  $(".weatherDashboard").show();
 
-  // localStorage.setItem("previouscity", cityName);
-  // if (citylist.includes(cityname)) {
-  //   return;
-  // }
-  // citylist.push(cityname);
-  // const navItemOuterEl = $("<li class='nav-item'>");
-  // navItemOuterEl.appendTo("#citylist");
-  // $(
-  //   '<a class="nav-link active list-group-item bg-white text-dark border-light text-center" href="#">' +
-  //     cityname +
-  //     "</a>"
-  // )
-  //   .css("textTransform", "capitalize")
-  //   .appendTo(navItemOuterEl);
+  if (citylist.includes(cityName)) {
+    return;
+  }
+  citylist.push(cityName);
+  localStorage.setItem("cities", JSON.stringify(citylist));
+  const navItemOuterEl = $("<li class='nav-item'>");
+  navItemOuterEl.appendTo("#citylist");
+  $(
+    '<a class="nav-link active list-group-item bg-white text-dark border-light text-center" href="#">' +
+      cityName +
+      "</a>"
+  )
+    .css("textTransform", "capitalize")
+    .appendTo(navItemOuterEl);
 }
