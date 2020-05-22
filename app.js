@@ -10,7 +10,7 @@ $("#button").on("click", function() {
 
 function getInput(cityName) {
   const apiCurrent =
-    `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`;
+    `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`;
   $.ajax({
     url: apiCurrent,
     method: "GET",
@@ -30,7 +30,7 @@ function getInput(cityName) {
     var lon = responseOneDay.coord.lon;
 
     const uvIndexUrl =
-      `http://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lon}`;
+      `https://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lon}`;
     $.ajax({
       url: uvIndexUrl,
       method: "GET",
@@ -55,7 +55,7 @@ function getInput(cityName) {
   });
 
   const apiFiveDay =
-    `http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`;
+    `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`;
   $.ajax({
     url: apiFiveDay,
     method: "GET",
