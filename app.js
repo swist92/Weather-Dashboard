@@ -171,10 +171,11 @@ function getInput(cityName) {
       day3.append(day3icon, day3temp, day3humidity);
       day4.append(day4icon, day4temp, day4humidity);
       day5.append(day5icon, day5temp, day5humidity);
+
+
   });
-
+ 
   // local storage goes here
-
   $(".weatherDashboard").show();
 
   if (citylist.includes(cityName)) {
@@ -184,6 +185,8 @@ function getInput(cityName) {
   localStorage.setItem("cities", JSON.stringify(citylist));
   const navItemOuterEl = $("<li class='nav-item'>");
   navItemOuterEl.appendTo("#citylist");
+  
+
   $(
     '<a class="nav-link active list-group-item bg-white text-dark border-light text-center" href="#">' +
       cityName +
@@ -192,3 +195,6 @@ function getInput(cityName) {
     .css("textTransform", "capitalize")
     .appendTo(navItemOuterEl);
 }
+$("col-md-7").click(function(){
+  $("div").empty();
+});
