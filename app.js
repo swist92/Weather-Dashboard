@@ -163,8 +163,10 @@ function getInput(cityName) {
       "Day 5 " + responseFiveDay.list[36].main.humidity
     );
 
+    $("#fiveDayForecast").empty();    
+
     // Append children
-      $("#weather").append(day1, day2, day3, day4, day5);
+      $("#fiveDayForecast").append(day1, day2, day3, day4, day5);
       // parent.append(nameOfChildHere);
       day1.append(day1icon, day1temp, day1humidity);
       day2.append(day2icon, day2temp, day2humidity);
@@ -185,7 +187,7 @@ function getInput(cityName) {
   localStorage.setItem("cities", JSON.stringify(citylist));
   const navItemOuterEl = $("<li class='nav-item'>");
   navItemOuterEl.appendTo("#citylist");
-  
+
 
   $(
     '<a class="nav-link active list-group-item bg-white text-dark border-light text-center" href="#">' +
@@ -195,6 +197,6 @@ function getInput(cityName) {
     .css("textTransform", "capitalize")
     .appendTo(navItemOuterEl);
 }
-$("col-md-7").click(function(){
-  $("div").empty();
-});
+// $(".col-md-7").click(function(){
+//   $("div").empty();
+// });
